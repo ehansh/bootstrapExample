@@ -1,8 +1,11 @@
 SampleApp::Application.routes.draw do
 
+  resources :requirements
+
   root to: 'page#home'
 
   match '/echo',    to: 'echo#echo'
+  match '/news',    to: 'news#display'
 
 
 

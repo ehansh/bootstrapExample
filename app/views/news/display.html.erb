@@ -1,0 +1,52 @@
+<div class="container">
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="row">
+      <div class="span9">
+        <div class="hero-unit"> 
+          <h1>eSports!<small> Nerds watching other nerds</small></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span6">
+        <div id="tabs">
+          <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+              <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+              <li><a href="#lol" data-toggle="tab">League of Legends</a></li>
+              <li><a href="#sc2" data-toggle="tab">Starcraft 2</a></li>
+              <li><a href="#governing_bodies" data-toggle="tab">Governing Bodies</a></li>
+          </ul>
+          <div id="my-tab-content" class="tab-content">
+              <div class="tab-pane active" id="home">
+                  <%= render partial: 'general' %>
+              </div>
+              <div class="tab-pane" id="lol">
+                  <%= render partial: 'league' %>
+              </div>
+              <div class="tab-pane" id="sc2">
+                  <%= render partial: 'starcraft' %>
+              </div>
+              <div class="tab-pane" id="governing_bodies">
+                <%= render partial: 'organizations' %>
+              </div>
+          </div>
+
+ 
+      </div>
+    </div> 
+    <div class="span3" id="sidebar">
+      <%= render partial: 'sidebar' %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span9">
+      <%= render partial: 'requirements' %> 
+    </div>
+  </div>
+</div>    <!-- container -->
+
+<hr>
+<footer class="span9">
+  <%= render partial: 'footer' %>
+</footer>
