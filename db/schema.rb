@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130218224626) do
     t.integer "customer_id"
     t.string "customer_name"
     t.integer "item_id"
+    t.float "total_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
