@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130212045226) do
+ActiveRecord::Schema.define(:version => 20130218224626) do
+
+  create_table "Customers", :force => true do |t|
+    t.string   "company_name"
+    t.string   "phone"
+    t.string   "contact_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+# Could not dump table "orders" because of following StandardError
+#   Unknown type 'Customer' for column 'customer'
 
   create_table "requirements", :force => true do |t|
     t.string   "description"
@@ -28,8 +45,10 @@ ActiveRecord::Schema.define(:version => 20130212045226) do
     t.string   "password_digest"
     t.string   "password"
     t.string   "password_confirmation"
+    t.string   "remember_token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
 end

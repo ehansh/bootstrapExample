@@ -1,5 +1,11 @@
 SampleApp::Application.routes.draw do
 
+  resources :items
+
+  resources :orders
+
+  resources :customers
+
   resources :requirements
 
   root to: 'page#home'
