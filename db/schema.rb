@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(:version => 20130218224626) do
 # Could not dump table "orders" because of following StandardError
 #   Unknown type 'Customer' for column 'customer'
 
-  create_table "orders", :force => true do |t|
-    t.string "item_name" 
-    t.integer "quantity"
-    t.total_cost "float" 
-    t.integer "customer_id"
-    t.string "customer_name"
-    t.integer "item_id"
-  end
-
   create_table "requirements", :force => true do |t|
     t.string   "description"
     t.integer  "point"
