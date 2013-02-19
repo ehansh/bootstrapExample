@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20130218224626) do
   create_table "orders", :force => true do |t|
     t.string "item_name" 
     t.integer "quantity"
-    t.total_cost "float" 
     t.integer "customer_id"
     t.string "customer_name"
     t.integer "item_id"
