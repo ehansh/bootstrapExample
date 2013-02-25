@@ -10,17 +10,21 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
+      <th></th>
     </tr>
-
   <% @customers.each do |customer| %>
     <tr>
       <td><b><%= customer.company_name %></b></td>
       <td><%= customer.phone %></td>
       <td><%= customer.contact_name %></td>
+      <td><%= link_to 'Place Order', new_customer_order_path(customer) %></td>
+      <td><%= link_to 'Show Orders', customer_orders_path(customer) %></td>
       <td><%= link_to 'Show', customer %></td>
       <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
       <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <%= customer_order_information(customer) %>  
+
+      <!--<%= customer_order_information(customer) %>  -->
     </tr>
   <% end %>
   </table>

@@ -2,7 +2,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+    @orders = Order.find_all_by_customer_id(params[:customer_id])
+    @customer = @orders.first.customer
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-    @order = Order.new
+    @order = Order.new(customer_name: Customer.find_by_id(params[:customer_id]).company_name)
 
     respond_to do |format|
       format.html # new.html.erb
