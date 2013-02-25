@@ -80,4 +80,23 @@ class CustomersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def showOrders
+    @customer = Customer.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @customer }
+    end
+  end
+
+  def newOrder
+    @customer = Customer.find(params[:id])
+    @order = Order.new(customer_name: @customer.company_name)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @customer }
+    end
+  end
 end
